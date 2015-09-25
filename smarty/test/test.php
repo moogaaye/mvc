@@ -11,8 +11,10 @@
 	$smarty->cache_lifetime = 120;
 
 
-
-	$smarty->display('area.tpl')
+	$smarty->assign('happy','中秋
+		中秋
+		中秋');
+	$smarty->display('test.tpl');
 
 
 

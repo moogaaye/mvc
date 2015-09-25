@@ -1,1 +1,1 @@
-{$abcde|default:"no title"}
+{$happy}
