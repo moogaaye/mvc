@@ -15,12 +15,12 @@ class DB{
 
 	public static function findAll($sql){
 		$query = self::$db->query($sql);
-		return = self::$db->findAll($query);
+		return self::$db->findAll($query);
 	}
 	
 	public static function findOne($sql){
 		$query = self::$db->query($sql);
-		return = self::$db->findOne($query);
+		return self::$db->findOne($query);
 	}
 
 	public static function findResult($sql, $row = 0 , $filed = 0){

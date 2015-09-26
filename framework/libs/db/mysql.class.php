@@ -7,7 +7,7 @@ class mysql{
 
 
  	function connect($config){
- 		exiract($config);
+ 		extract($config);
  		if(!($con = mysql_connect($dbhost,$dbuser,$dbpws))){
  			$this->err(mysql_error());
  		}
@@ -50,8 +50,8 @@ class mysql{
  			$value = mysql_real_escape_string($value);
  			$keyArr = "`".$key."`";
  			$valueArr = "`".$value."`";
- 			$keys = implode(","$keyArr);
- 			$values = implode(","$valueArr);
+ 			$keys = implode(",",$keyArr);
+ 			$values = implode(",",$valueArr);
  			$sql = "insert into".$table."(".$keys.") values(".$values.")";
  			$this->query($sql);
  			return mysql_insert_id();
@@ -65,7 +65,7 @@ class mysql{
  		foreach($arr as $key=>$value){
  			$value = mysql_real_escape_string($value);
  			$keyAndvalueArr[] = "`".$key."`'".$value."'";
- 			$keyAndvalues = impolde(","$keyAndvalueArr);
+ 			$keyAndvalues = implode(",",$keyAndvalueArr);
  			$sql = "update".$table."set".$keyAndvalues."where".$where;
  			$this->query($sql);
  		}
@@ -75,10 +75,6 @@ class mysql{
  		$sql = "delete from".$table."where".$where;
  		$this->query($sql);
  	}
-
-
-
-
 
  }
 
